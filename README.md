@@ -1,6 +1,6 @@
 # Lung Cancer Detection System
 
-This repository contains the code for a lung cancer detection system, which uses machine learning to analyze CT scans to detect signs of lung cancer. The system also assists users in finding top doctors and the nearest medical centers for treatment.
+This repository contains the code for a lung cancer detection system, which uses machine learning to analyze CT scans to detect signs of lung cancer. 
 
 ## Technologies
 
@@ -13,10 +13,13 @@ This repository contains the code for a lung cancer detection system, which uses
 
 ## Features
 
-- **Cancer Detection:** Analyzes CT scans to detect lung cancer.
-- **Doctor and Medical Center Database:** Provides details on top doctors and nearest medical centers.
-- **Appointment Scheduling:** Enables users to book appointments with specialists.
-- **User Interface:** Allows users to upload CT scans and fill out medical details through a user-friendly web interface.
+ 	- **Allows to upload lung image.
+ 	- **Provide immediate result.
+ 	- **Health guidelines.
+ 	- **Allows to make an appointment scheduling.
+ 	- **Geolocation services.
+ 	- **Email notification system.
+
 
 ## Installation
 
@@ -26,11 +29,15 @@ Follow these detailed steps to set up the project locally:
    - Ensure Python 3.8 is installed on your system.
 
 ### 2. Download and Set Up the Project
-   - Clone the project repository from GitHub or download the zip file and extract it to your preferred directory:
+   - Clone the project repository from GitHub(Don't download zip file):
      ```bash
      git clone https://github.com/yourusername/lung-cancer-detection-system.git
      cd lung-cancer-detection-system
      ```
+### 3. Open project using VS Code and switch into currect directory (Optional but Recommended)
+- **Path should be like this.(your previous path\lung-cancer-detection-system-1>)
+- **From this path flow next step. For an example your previous path\lung-cancer-detection-system-1>python -m venv lung-cancer-env
+- **Like above follow rest of steps
 
 ### 3. Set Up a Virtual Environment (Optional but Recommended)
    - Open your terminal and execute the following commands:
@@ -52,12 +59,4 @@ Follow these detailed steps to set up the project locally:
    - Open a web browser and visit `http://localhost:5000` or the port specified in the Flask application.
    - The lung cancer detection system's homepage should load, allowing you to interact with the application.
 
-## Contributing
 
-Contributions to the project are welcome! Please open an issue first to discuss what you would like to change.
-
-Please ensure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
