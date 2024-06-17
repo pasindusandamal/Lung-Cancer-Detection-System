@@ -17,8 +17,8 @@ app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'sandamalpkp6@gmail.com'  # Use environment variable for security
-app.config['MAIL_PASSWORD'] = 'scih bofu aqne kwgo '  # Use environment variable for security
+app.config['MAIL_USERNAME'] = ''  # Use environment variable for security
+app.config['MAIL_PASSWORD'] = ''   # Use environment variable for security
 mail = Mail(app)
 
 
@@ -105,7 +105,7 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/lung_db"
 mongo = PyMongo(app)
 
 
-model = load_model("lung_model.h5")
+model = load_model("my_lung_cancer_model .h5")
 class_names = ["Bengin", "Malignant", "Normal"]
 
 @app.route('/')

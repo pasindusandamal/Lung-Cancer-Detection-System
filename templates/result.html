@@ -8,7 +8,7 @@
 
     <!-- Include the Google Maps and Places API script -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfYpKhJnh8Y6iWFXCUpDhnJv1rp32mkVY&libraries=places&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key="
       async
       defer
     ></script>
@@ -64,24 +64,28 @@
       }
 
       .banner-image {
-  position: relative;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  text-align: center; /* Ensure text alignment is centered if it breaks into multiple lines */
-  height: 500px; /* Match the height of your banner image */
-}
+        position: relative;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Ensure text alignment is centered if it breaks into multiple lines */
+        height: 500px; /* Match the height of your banner image */
+      }
 
-.banner-text {
-  position: absolute;
-  color: white; /* Choose text color that stands out */
-  font-size: 24px; /* Adjust size as needed */
-  font-weight: bold; /* Optional: adds emphasis */
-  padding: 20px; /* Adjust padding as needed */
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: adds a semi-transparent background to the text */
-  border-radius: 10px; /* Optional: rounds the corners of the text background */
-}
-
+      .banner-text {
+        position: absolute;
+        color: white; /* Choose text color that stands out */
+        font-size: 24px; /* Adjust size as needed */
+        font-weight: bold; /* Optional: adds emphasis */
+        padding: 20px; /* Adjust padding as needed */
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Optional: adds a semi-transparent background to the text */
+        border-radius: 10px; /* Optional: rounds the corners of the text background */
+      }
 
       .banner-image::after {
         content: "";
@@ -130,10 +134,15 @@
     </nav>
 
     <div class="banner-image">
-      <img src="../static/images/img_2.webp" alt="Banner" style="width: 100%; height: 500px; object-fit: cover" />
-      <div class="banner-text">Congrats. You have very low risk for getting cancer.</div>
+      <img
+        src="../static/images/img_2.webp"
+        alt="Banner"
+        style="width: 100%; height: 500px; object-fit: cover"
+      />
+      <div class="banner-text">
+        Congrats. You have very low risk for getting cancer.
+      </div>
     </div>
-    
 
     <h3>Result for {{ filename }}</h3>
     <div id="predictedClassContainer">
