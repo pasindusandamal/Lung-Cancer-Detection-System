@@ -101,9 +101,6 @@ def submit_appointment():
 
 
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/lung_db"
-mongo = PyMongo(app)
-
 
 model = load_model("my_lung_cancer_model .h5")
 class_names = ["Bengin", "Malignant", "Normal"]
@@ -111,19 +108,6 @@ class_names = ["Bengin", "Malignant", "Normal"]
 @app.route('/')
 def index():
     return render_template('index.html')
-
-
-@app.route('/test')
-def show_patients():
-    # Assuming 'patients' is your collection name. Replace 'patients' with your actual collection name if it's different.
-    patients_cursor = mongo.db.lung_db.find()
-    patients_list = list(patients_cursor)
-    
-    # For debugging; this will print to console where your Flask app is running
-    print(patients_list)
-    
-    # Now pass the list of dictionaries (patients_list) to the template
-    return render_template('Test.html', patients=patients_list)
 
 @app.route('/contact')
 def contact():
@@ -172,19 +156,13 @@ def predict():
         predicted_class_index = np.argmax(predictions)
         predicted_class_name = class_names[predicted_class_index]
 
-        # MongoDB: Example of inserting a document into 'predictions' collection
-        mongo.db.predictions.insert_one({
-            "filename": filename,
-            "predicted_class": predicted_class_name
-        })
+     
 
           # Fetching the patients list for malignant predictions
         if predicted_class_name.lower() == 'malignant':
-            patients_cursor = mongo.db.lung_db.find()
-            patients_list = list(patients_cursor)
-            print(patients_list)  # For debugging; this will print to console where your Flask app is running
+          
 
-            return render_template('Malignant.html', filename=filename, predicted_class=predicted_class_name, patients=patients_list)
+            return render_template('Malignant.html', filename=filename, predicted_class=predicted_class_name)
 
         elif predicted_class_name.lower() == 'bengin':
             return render_template('Bengin.html', filename=filename, predicted_class=predicted_class_name)
